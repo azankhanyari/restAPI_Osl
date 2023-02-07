@@ -122,7 +122,7 @@ class arqQ():
 
         pushed_components = []
         for components in consolidated_station_data:
-            pushed_components.append(self.ARD_request(method="POST", endpoint='/api/v2/components',ARDOQ_API_HOST='https://caseinterviewazan.ardoq.com',ARDOQ_API_TOKEN='9e15d653cbec4cffab6622d4352f2bc9', data=components))
+            pushed_components.append(self.ARD_request(method="POST", endpoint='/api/v2/components',ARDOQ_API_HOST='https://caseinterviewazan.ardoq.com',ARDOQ_API_TOKEN='xxx', data=components))
 
         return pushed_components
 
@@ -131,14 +131,14 @@ class arqQ():
         delete_responses = []
         for component in existing_data['values']:
             id =component.get('_id')
-            delete_responses.append(self.ARD_request(method="DELETE", endpoint='/api/v2/components', path_param=id,ARDOQ_API_HOST='https://caseinterviewazan.ardoq.com',ARDOQ_API_TOKEN='9e15d653cbec4cffab6622d4352f2bc9'))
+            delete_responses.append(self.ARD_request(method="DELETE", endpoint='/api/v2/components', path_param=id,ARDOQ_API_HOST='https://caseinterviewazan.ardoq.com',ARDOQ_API_TOKEN='xxx'))
 
 
 
 if __name__ == '__main__':
 
     arQ_obj = arqQ()
-    existing_data = arQ_obj.ARD_request(ARDOQ_API_HOST = 'https://caseinterviewazan.ardoq.com', endpoint ='/api/v2/components', ARDOQ_API_TOKEN= '9e15d653cbec4cffab6622d4352f2bc9', method= "GET", data=None, query_params=None,path_param=None)                       #rootWorkspace , typeId is required for inital push of components to Ardoq API
+    existing_data = arQ_obj.ARD_request(ARDOQ_API_HOST = 'https://caseinterviewazan.ardoq.com', endpoint ='/api/v2/components', ARDOQ_API_TOKEN= 'xxx', method= "GET", data=None, query_params=None,path_param=None)                       #rootWorkspace , typeId is required for inital push of components to Ardoq API
     existing_data = json.loads(existing_data)
     rootWorkspace,typeId = arQ_obj.extractParams(existing_data)
 

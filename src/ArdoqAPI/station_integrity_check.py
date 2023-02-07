@@ -39,7 +39,7 @@ class Arq_stations():
 
                         toPUSH_components.append(arQ_obj.ARD_request(method="POST", endpoint='/api/v2/components',
                                                                   ARDOQ_API_HOST='https://caseinterviewazan.ardoq.com',
-                                                                  ARDOQ_API_TOKEN='9e15d653cbec4cffab6622d4352f2bc9',
+                                                                  ARDOQ_API_TOKEN='xxx',
                                                                   data=data))
                         break
 
@@ -51,7 +51,7 @@ class Arq_stations():
                 ArdOID = ArOID_stationid_mapping.get(olditem)
                 delete_responses.append(arQ_obj.ARD_request(method="DELETE", endpoint='/api/v2/components', path_param=ArdOID,                                                            #ArdoqID for station id to be removed
                                                          ARDOQ_API_HOST='https://caseinterviewazan.ardoq.com',
-                                                         ARDOQ_API_TOKEN='9e15d653cbec4cffab6622d4352f2bc9'))
+                                                         ARDOQ_API_TOKEN='xxx'))
 
 
 
@@ -66,7 +66,7 @@ if __name__ == '__main__':
     while True:
 
         arQ_obj = arqQ()
-        existing_data = arQ_obj.ARD_request(ARDOQ_API_HOST='https://caseinterviewazan.ardoq.com',endpoint='/api/v2/components',ARDOQ_API_TOKEN='9e15d653cbec4cffab6622d4352f2bc9', method="GET",data=None, query_params=None,path_param=None)  # for all bike station componentIDs fetch everything
+        existing_data = arQ_obj.ARD_request(ARDOQ_API_HOST='https://caseinterviewazan.ardoq.com',endpoint='/api/v2/components',ARDOQ_API_TOKEN='xxx', method="GET",data=None, query_params=None,path_param=None)  # for all bike station componentIDs fetch everything
         existing_data = json.loads(existing_data)
         rootWorkspace, typeId = arQ_obj.extractParams(existing_data)
 

@@ -33,7 +33,7 @@ class UpdatesArQ():
             for arOID,dynamicFields in item.items():
 
                 patch_resp.append(arQ_obj.ARD_request(method="PATCH", endpoint='/api/v2/components', path_param=arOID,
-                                     ARDOQ_API_HOST='https://caseinterviewazan.ardoq.com',
+                                     ARDOQ_API_HOST='XXX',
                                      ARDOQ_API_TOKEN='xxx',
                                      query_params={'ifVersionMatch': 'latest'},
                                      data=dynamicFields))
@@ -48,7 +48,7 @@ if __name__ == '__main__':
     while True:
 
         arQ_obj = arqQ()
-        existing_data = arQ_obj.ARD_request(ARDOQ_API_HOST='https://caseinterviewazan.ardoq.com',endpoint='/api/v2/components',ARDOQ_API_TOKEN='xxx', method="GET",data=None, query_params=None,path_param=None)  # for all bike station componentIDs fetch everything
+        existing_data = arQ_obj.ARD_request(ARDOQ_API_HOST='XXX',endpoint='/api/v2/components',ARDOQ_API_TOKEN='xxx', method="GET",data=None, query_params=None,path_param=None)  # for all bike station componentIDs fetch everything
         existing_data = json.loads(existing_data)
 
 
@@ -65,7 +65,7 @@ if __name__ == '__main__':
         #print((time.time() - starttime) % 3600.0)
         time.sleep(3600.0 - ((time.time() - starttime) % 3600.0))   #run every 1 hour
 
-        #existing_data = arQ_obj.ARD_request(ARDOQ_API_HOST = 'https://caseinterviewazan.ardoq.com', endpoint ='/api/v2/components', ARDOQ_API_TOKEN= 'xxx', method= "GET", data=None, query_params=None,path_param=None)                       #rootWorkspace , typeId is required for inital push of components to Ardoq API
+        #existing_data = arQ_obj.ARD_request(ARDOQ_API_HOST = 'XXX', endpoint ='/api/v2/components', ARDOQ_API_TOKEN= 'xxx', method= "GET", data=None, query_params=None,path_param=None)                       #rootWorkspace , typeId is required for inital push of components to Ardoq API
 
 
         #rootWorkspace, typeId = arQ_obj.extractParams(existing_data)

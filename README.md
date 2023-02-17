@@ -1,4 +1,3 @@
-# ArdoCasa CaseStudy
 
 OslobikeAPI.py must be run to fetch real time data from two Oslo Bikes endpoints - these give us information about station_ids and each station_status ##
 Initial_push_data_Ardoq.py  This is the initial push to our Ardoq Worspace. Each station is created as a new bike station component in our workspace. Old data on workspace is purged before inital push. Each bike station component has certain fields as below:## 
